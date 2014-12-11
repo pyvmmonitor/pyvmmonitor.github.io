@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p>
+        For added flexibility, it's possible to use PyVMMonitor programatically so that a profile
+        session can be started/stopped and PyVMMonitor shows the results of the profile session
+        afterwards.
+        </p>
+        
+        To connect an application to PyVMMonitor (so that it's possible to start/stop profiling),
+        use the code below (changing "PYVMMONITOR_INSTALL_DIR" to the appropriate location).
+        
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">import sys
+sys.path.append(r'PYVMMONITOR_INSTALL_DIR\public_api')
+from pyvmmonitor import server
+server.connect_to_pyvmmonitor()</code></pre>
+
+    </body>
+</html>

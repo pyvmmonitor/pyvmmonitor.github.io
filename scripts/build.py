@@ -87,16 +87,74 @@ def extract(contents, tag):
     return contents[i + len(tag) + 2:j]
 
 
+
 class Info:
     def __init__(self, title):
         self.title = title
         self.filename = None
 
 
+FILE_TO_INFO = pyodict.odict([
+    ('attach_to.html', Info('Attach to running CPython program')),
+    ('public_api.html', Info('API to use PyVMMonitor programatically')),
+])
+
+
+help_location = os.path.join(os.path.dirname(__file__), 'manual')
+
+if os.path.exists(help_location):
+    for f in os.listdir(help_location):
+        if not f.endswith('.html'):
+            continue
+        if f not in FILE_TO_INFO:
+            raise ValueError('Not expecting: %s' % (f,))
+        FILE_TO_INFO[f].filename = os.path.join(help_location, f)
+else:
+    print('Dir: %s does not exist (unable to generate related pages)' % help_location)
+
+#===================================================================================================
+# create_manual_header
+#===================================================================================================
+def create_manual_header():
+    lis = []
+    for file_basename, file_info in FILE_TO_INFO.iteritems():
+        lis.append('<p><a href="%s">%s</a></p>' % (
+            os.path.basename(file_info.filename),
+            file_info.title
+        ))
+
+    return '''
+%(li)s<br><br><br>
+<p><small>Copyright 2014 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+''' % {'li': '\n'.join(lis)}
+
+if os.path.exists(help_location):
+    MANUAL_HEADER = create_manual_header()
+
+
+#===================================================================================================
+# create_manual_page
+#===================================================================================================
+def create_manual_page():
+
+
+    manual_body = '''
+<h3>Choose the topic you're interested in...</h3>
+'''
+    apply_to_contents(manual_body, 'manual.html', manual_body, MANUAL_HEADER)
+
+
+
 #===================================================================================================
 # main
 #===================================================================================================
 def main():
+    # Manual
+    if os.path.exists(help_location):
+        create_manual_page()
+        for info in FILE_TO_INFO.itervalues():
+            apply_to(info.filename, header=MANUAL_HEADER)
+            
     apply_to(os.path.join(this_file_dir, 'index.html'))
     apply_to(os.path.join(this_file_dir, 'history.html'))
     apply_to(os.path.join(this_file_dir, 'download.html'))
