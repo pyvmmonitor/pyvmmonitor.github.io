@@ -14,5 +14,60 @@
     <body>
         PyVmMonitor is still in early beta and is only available for funders which participated in
         its crowdfunding campaign: <a href="https://sw-brainwy.rhcloud.com/support/pydev-2014/">https://sw-brainwy.rhcloud.com/support/pydev-2014/</a>
+        <br/>
+        <br/>
+        Now, if you're a funder, you should already have the download link, so, download it and read along to install PyVmMonitor and its requisites:
+        <br/>
+        <br/>
+        <strong>Instaling on Windows</strong>: after downloading PyVmMonitor, double-click the installer and follow the steps!
+        <br/>
+        <br/>
+        <strong>Instaling on Linux</strong>: after downloading the .tar.gz, extract it to where you'd like:
+        <br/>
+        <br/>
+        tar xfz pyvmmonitor.tar.gz
+        <br/>
+        <br/>
+        Then, create a link to start it using 'pyvmmonitor-ui' from anywhere with: 
+        <br/>
+        <br/>
+        
+        sudo ln -s `pwd`/pyvmmonitor/pyvmmonitor-ui /usr/bin/pyvmmonitor-ui 
+        <br/>
+        <br/>
+        (or alternatively, just execute pyvmmonitor/pyvmmonitor-ui) 
+        <br/>
+        <br/>
+        <h3>Requisites</h3>
+        In order to work properly at its best, PyVmMonitor also requires the current yappi development version: <a href="https://code.google.com/p/yappi/">https://code.google.com/p/yappi/</a>
+        (for the profile being thread-aware).
+        <br/>
+        <br/>
+        So, after installing PyVmMonitor, you should also install yappi and add it to your PYTHONPATH.
+        <br/>
+        <br/>
+        If you're on Windows, the zip files below may be used (extract its contents so that yappi.py and _yappi.pyd are your PYTHONPATH -- usually
+        in the python site-packages directory).
+        <br/>
+        <br/>
+        <ul>
+            <li><a href="/precompiled/yappi-lib.win-amd64-2.7.zip">yappi-lib.win-amd64-2.7.zip</a></li>
+            <li><a href="/precompiled/yappi-lib.win32-2.7.zip">yappi-lib.win32-2.7.zip</a></li>
+            <li><a href="/precompiled/yappi-lib.win32-3.4.zip">yappi-lib.win32-3.4.zip</a></li>
+        </ul>
+        If you have a different platform, please download/install yappi:
+        <br/>
+        <br/>
+        hg clone ssh://hg@bitbucket.org/sumerc/yappi
+        <br/>
+        <br/>
+        python setup.py install
+        <br/>
+        <br/>
+        Note that it'll build a binary extension, so, make sure you have a compiler properly configured for your Python version.
+        <br/>
+        <br/>
+        
+        
     </body>
 </html>
