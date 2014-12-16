@@ -40,8 +40,9 @@
         <div class="wrapper">
             <header>
                 
-<p><a href="attach_to.html">Attach to running CPython program</a></p>
-<p><a href="public_api.html">API to use PyVMMonitor programatically</a></p><br><br><br>
+<p><a href="attach_to.html">Attach to running CPython program and use Yappi to do a profile session</a></p>
+<p><a href="public_api.html">API to use PyVMMonitor programatically</a></p>
+<p><a href="preferences.html">PyVMMonitor preferences (theme, listening port, editor font, etc.)</a></p><br><br><br>
 <p><small>Copyright 2014 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 
             </header>
@@ -57,7 +58,7 @@
         <br/>
             After connecting to a running application, a live view will be shown where it's possible
             to start/stop an on-the fly profile session using <a href="https://code.google.com/p/yappi/">yappi</a>.
-            Note: the latest version of yappi is required and must be already available to your application. 
+            Note: yappi 0.94 onwards is required and must be already available in your application's PYTHONPATH. 
         <br/>
         <br/>
         
@@ -66,21 +67,34 @@
         <br/>
             When the profile session is stopped, an item with the results will appear in the tree.
             Selecting it allows us to sort the profile results as wanted and provides a detailed analysis
-            where it's possible to see grouped statistics:
+            where it's possible to see grouped statistics.<br/>
+            <br/>
+            Double-clicking an item will show the statistic in an editor and just selecting it will
+            make it the current function in the callers/callees view.
         <br/>
         <br/>
         
             <img src="images/statistics.png"/>
         <br/>
         <br/>
-            Navigate callers and callees:
+            After selecting a function (in the grouped statistics or hotspots graph), 
+            it's possible to navigate through callers and callees:<br/>
+            <br/>
+            Double-clicking the items for functions which called the
+            current function or functions called by it will change the current function.<br/>
+            <br/>
+            Double-clicking the current function will open an editor where the given line may be seen.
         <br/>
         <br/>
         
             <img src="images/callers_callees.png"/>
         <br/>
         <br/>
-            View a graph showing the hotspots (layout powered by <a href="https://github.com/bdcht/grandalf">Grandalf</a>)
+            The last tab shows a view with graph showing the hotspots (layout powered by <a href="https://github.com/bdcht/grandalf">Grandalf</a>).<br/>
+            <br/>
+            Note that you may have multiple graphs: if you have multiple threads, there should be 
+            one for each thread, but even if you have only a single thread you may still have
+            multiple tabs as the profile results may be disconnected.
         <br/>
         <br/>
         
@@ -91,13 +105,6 @@
         <br/>
         <br/>
             <img src="images/show_editor.png"/>
-        <br/>
-        <br/>
-            Note that it's possible to change the theme at the options:
-        <br/>
-        <br/>
-        
-            <img src="images/preferences.png"/>
         <br/>
         <br/>
     

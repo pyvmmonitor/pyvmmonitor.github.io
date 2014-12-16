@@ -95,8 +95,9 @@ class Info:
 
 
 FILE_TO_INFO = pyodict.odict([
-    ('attach_to.html', Info('Attach to running CPython program')),
+    ('attach_to.html', Info('Attach to running CPython program and use Yappi to do a profile session')),
     ('public_api.html', Info('API to use PyVMMonitor programatically')),
+    ('preferences.html', Info('PyVMMonitor preferences (theme, listening port, editor font, etc.)')),
 ])
 
 
@@ -140,6 +141,7 @@ def create_manual_page():
 
     manual_body = '''
 <h3>Choose the topic you're interested in...</h3>
+<img src="images/arrow_left.png" />
 '''
     apply_to_contents(manual_body, 'manual.html', manual_body, MANUAL_HEADER)
 

@@ -3,19 +3,84 @@
     <head></head>
     <body>
         <p>
-        For added flexibility, it's possible to use PyVMMonitor programatically so that a profile
-        session can be started/stopped and PyVMMonitor shows the results of the profile session
-        afterwards.
+        For added flexibility, it's possible to use PyVMMonitor programatically.
+        </p>
+        <p>
+        Some use-cases include connecting programatically to PyVMMonitor (instead of using
+        the attach to running process) and making a profile session and sending the results
+        to be shown in PyVMMonitor.
         </p>
         
-        To connect an application to PyVMMonitor (so that it's possible to start/stop profiling),
-        use the code below (changing "PYVMMONITOR_INSTALL_DIR" to the appropriate location).
+        <p>
+        The main window has links with the available code-samples:
+        </p>
+        
+        <img src="images/welcome_api.png"/>
+        
+        <p>
+        As a reference, the public API is designed around the pyvmmonitor package which has the
+        following functions:
+        </p>
         
         <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
-          <code style="color:#000000;word-wrap:normal;">import sys
-sys.path.append(r'PYVMMONITOR_INSTALL_DIR\public_api')
-from pyvmmonitor import server
-server.connect_to_pyvmmonitor()</code></pre>
+          <code style="color:#000000;word-wrap:normal;">
+def connect(host='127.0.0.1', port=None):
+    '''
+    The host and port are optional. By default the host is 127.0.0.1 and the
+    port is obtained by querying the current settings of the application.
+    '''
+          </code></pre>
+          
+          
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+def profile_method(*args, **kwargs):
+    '''
+    Decorator for profiling a method.
 
+    It can be used as a decorator without arguments (which will show the results
+    in the currently active pyvmmonitor ui):
+
+    @profile_method
+    def my_call():
+        ...
+
+    Or can be customized by receiving kwargs:
+
+    @profile_method(
+        filename='output.pstats', show_text=True, show_in_pyvmmonitor=False)
+    def my_call():
+        ...
+
+
+    :param show_in_pyvmmonitor:
+        Determines if we should send the results to pyvmmonitor. If still
+        not connected, it'll connect to pyvmmonitor and then send the pstats
+        for visual inspection.
+
+    :param host:
+        Defaults to 127.0.0.1
+
+    :param port:
+        Defaults to the value which is currently saved in the application
+        settings.
+
+    :param filename:
+        Optional attribute. If given we'll also save the pstats results to the
+        given filename.
+
+    :param show_text:
+        If given we'll also print the profile results when the profile finishes.
+
+        Should be a str or list(str) saying how to show the results.
+
+        I.e.: 'cumulative' or ('cumulative', 'time')
+
+    :param show_text_rows:
+        Only used if show_text is also passed (determines the number of rows to
+        print).
+    '''
+          </code></pre>
+        
     </body>
 </html>
