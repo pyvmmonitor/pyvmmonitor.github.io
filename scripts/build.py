@@ -33,7 +33,7 @@ HEADER = '''
     <!-- <li><a href="http://???">Get It <strong>Download</strong></a></li> -->
     <li><a href="https://groups.google.com/forum/#!forum/pyvmmonitor">Googlegroups <strong>Forum</strong></a></li>
     <li><a href="http://pyvmmonitor.blogspot.com.br/">View <strong>Blog</strong></a></li>
-    <li><a href="https://sw-brainwy.rhcloud.com/tracker/PyVMMonitor/">PyVMMonitor<strong>Tracker</strong></a></li>
+    <li><a href="https://sw-brainwy.rhcloud.com/tracker/PyVmMonitor/">PyVMMonitor<strong>Tracker</strong></a></li>
 </ul>
 <ul class="top2">
     <li class="lifull"><a href="download.html">Get it<strong>Download</strong></a></li>
