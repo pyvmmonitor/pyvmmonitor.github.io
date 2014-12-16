@@ -27,13 +27,13 @@ page_dir = os.path.dirname(this_file_dir)
 
 
 HEADER = '''
-<h1 class="header_liclipse">PyVMMonitor</h1>
+<h1 class="header_liclipse">PyVmMonitor</h1>
 <!--<p>Profiling Python</p>-->
 <ul class="top1">
     <!-- <li><a href="http://???">Get It <strong>Download</strong></a></li> -->
     <li><a href="https://groups.google.com/forum/#!forum/pyvmmonitor">Googlegroups <strong>Forum</strong></a></li>
     <li><a href="http://pyvmmonitor.blogspot.com.br/">View <strong>Blog</strong></a></li>
-    <li><a href="https://sw-brainwy.rhcloud.com/tracker/PyVmMonitor/">PyVMMonitor<strong>Tracker</strong></a></li>
+    <li><a href="https://sw-brainwy.rhcloud.com/tracker/PyVmMonitor/">PyVmMonitor<strong>Tracker</strong></a></li>
 </ul>
 <ul class="top2">
     <li class="lifull"><a href="download.html">Get it<strong>Download</strong></a></li>
@@ -52,7 +52,7 @@ HEADER = '''
     </li>
 </ul>
 
-Pricing: A PyVMMonitor license is US$ ?? TBD<br><br><br>
+Pricing: A PyVmMonitor license is US$ ?? TBD<br><br><br>
 -->
 <p><small>Copyright 2014 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
@@ -96,8 +96,8 @@ class Info:
 
 FILE_TO_INFO = pyodict.odict([
     ('attach_to.html', Info('Attach to running CPython program and use Yappi to do a profile session')),
-    ('public_api.html', Info('API to use PyVMMonitor programatically')),
-    ('preferences.html', Info('PyVMMonitor preferences (theme, listening port, editor font, etc.)')),
+    ('public_api.html', Info('API to use PyVmMonitor programatically')),
+    ('preferences.html', Info('PyVmMonitor preferences (theme, listening port, editor font, etc.)')),
 ])
 
 
