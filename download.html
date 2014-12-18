@@ -82,10 +82,10 @@ Pricing: A PyVmMonitor license is US$ ?? TBD<br><br><br>
         <strong>Instaling on Windows</strong>: after downloading PyVmMonitor, double-click the installer and follow the steps!
         <br/>
         <br/>
-        <strong>Instaling on Linux</strong>: after downloading the .tar.gz, extract it to where you'd like:
+        <strong>Instaling on Linux</strong>: after downloading the .tar.gz, and moving it to the proper folder, extract it to where you'd like:
         <br/>
         <br/>
-        tar xfz pyvmmonitor.tar.gz
+        tar xvf pyvmmonitor.tar.gz
         <br/>
         <br/>
         Then, create a link to start it using 'pyvmmonitor-ui' from anywhere with: 
@@ -106,7 +106,7 @@ Pricing: A PyVmMonitor license is US$ ?? TBD<br><br><br>
         So, after installing PyVmMonitor, you should also install yappi and add it to your PYTHONPATH.
         <br/>
         <br/>
-        If you're on Windows, the zip files below may be used (extract its contents so that yappi.py and _yappi.pyd are your PYTHONPATH -- usually
+        If you're on Windows using Python 2.7, the zip files below may be used (extract its contents so that yappi.py and _yappi.pyd are your PYTHONPATH -- usually
         in the python site-packages directory).
         <br/>
         <br/>
@@ -114,7 +114,7 @@ Pricing: A PyVmMonitor license is US$ ?? TBD<br><br><br>
             <li><a href="/precompiled/yappi-lib.win-amd64-2.7.zip">yappi-lib.win-amd64-2.7.zip</a></li>
             <li><a href="/precompiled/yappi-lib.win32-2.7.zip">yappi-lib.win32-2.7.zip</a></li>
         </ul>
-        If you have a different platform, please download/install yappi:
+        If you have a different Python version or OS, please download/install yappi from the latest development sources (requires mercurial for 'hg'):
         <br/>
         <br/>
         hg clone https://bitbucket.org/sumerc/yappi
