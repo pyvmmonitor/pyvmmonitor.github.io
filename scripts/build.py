@@ -96,6 +96,7 @@ class Info:
 
 FILE_TO_INFO = pyodict.odict([
     ('attach_to.html', Info('Attach to running CPython program and use Yappi to do a profile session')),
+    ('command_line.html', Info('Command line parameters for PyVmMonitor')),
     ('public_api.html', Info('API to use PyVmMonitor programatically')),
     ('preferences.html', Info('PyVmMonitor preferences (theme, listening port, editor font, etc.)')),
 ])

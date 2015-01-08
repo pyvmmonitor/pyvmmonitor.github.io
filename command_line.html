@@ -49,65 +49,57 @@
             </header>
             <section>
                 
-        PyVmMonitor can attach to a running CPython program. To use this feature select 'Connect to
-        a running process' in the initial page.
-        <br/>
-        <br/>
+        <p>
+        It's possible to use the PyVmMonitor command line to run a Python script attached to the 
+        PyVmMonitor from the start.
+        </p>
         
-            <img src="images/attach_to.png"/>
-        <br/>
-        <br/>
-            After connecting to a running application, a live view will be shown where it's possible
-            to start/stop an on-the fly profile session using <a href="https://code.google.com/p/yappi/">yappi</a>.
-            Note: yappi 0.94 onwards is required and must be already available in your application's PYTHONPATH. 
-        <br/>
-        <br/>
+        <p>
+        The welcome page has a link which will show the command line to be used for your
+        particular installation of PyVmMonitor.
+        </p>
         
-            <img src="images/live_view.png"/>
-        <br/>
-        <br/>
-            When the profile session is stopped, an item with the results will appear in the tree.
-            Selecting it allows us to sort the profile results as wanted and provides a detailed analysis
-            where it's possible to see grouped statistics.<br/>
-            <br/>
-            Double-clicking an item will show the statistic in an editor and just selecting it will
-            make it the current function in the callers/callees view.
-        <br/>
-        <br/>
+        <img src="images/command_line.png"/>
         
-            <img src="images/statistics.png"/>
         <br/>
         <br/>
-            After selecting a function (in the grouped statistics or hotspots graph), 
-            it's possible to navigate through callers and callees:<br/>
-            <br/>
-            Double-clicking the items for functions which called the
-            current function or functions called by it will change the current function.<br/>
-            <br/>
-            Double-clicking the current function will open an editor where the given line may be seen.
-        <br/>
-        <br/>
+        <h4>Start profiling with yappi:</h4>
         
-            <img src="images/callers_callees.png"/>
-        <br/>
-        <br/>
-            The last tab shows a view with graph showing the hotspots (layout powered by <a href="https://github.com/bdcht/grandalf">Grandalf</a>).<br/>
-            <br/>
-            Note that you may have multiple graphs: if you have multiple threads, there should be 
-            one for each thread, but even if you have only a single thread you may still have
-            multiple tabs as the profile results may be disconnected.
-        <br/>
-        <br/>
+        <p>When running in this mode, the command line will start the UI (if needed), start the yappi
+        profiler, run the user code and show the profile results in PyVmMonitor when the run is
+        finished.</p>
         
-            <img src="images/graph.png"/>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor --profile=yappi file_to_profile.py
+
+</code></pre>
+        
+
+
         <br/>
+        <h4>Start profiling with profile/cProfile:</h4>
+        <p>When running in this mode, the command line will start the UI (if needed), start the
+        profiler using cProfile or profile, run the user code and show the profile results in PyVmMonitor when the run is
+        finished.</p>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor --profile=lsprof file_to_profile.py
+
+</code></pre>
+        
+
         <br/>
-            Note: double-clicking the current function in the callers/callees or a graph node opens an editor to view the given file contents:
-        <br/>
-        <br/>
-            <img src="images/show_editor.png"/>
-        <br/>
-        <br/>
+        <h4>Start connected:</h4>
+        <p>In this mode the script will be run with the profiler connected. It will show the live 
+        view and the possibility of starting yappi later on. In this mode, using the API will
+        show the results on the connected PyVmMonitor.</p>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor file_to_profile.py
+
+</code></pre>
+        
     
                 <!-- <pre><code>$ cd your_repo_root/repo_name
                     $ git fetch origin

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p>
+        It's possible to use the PyVmMonitor command line to run a Python script attached to the 
+        PyVmMonitor from the start.
+        </p>
+        
+        <p>
+        The welcome page has a link which will show the command line to be used for your
+        particular installation of PyVmMonitor.
+        </p>
+        
+        <img src="images/command_line.png"/>
+        
+        <br/>
+        <br/>
+        <h4>Start profiling with yappi:</h4>
+        
+        <p>When running in this mode, the command line will start the UI (if needed), start the yappi
+        profiler, run the user code and show the profile results in PyVmMonitor when the run is
+        finished.</p>
+        
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor --profile=yappi file_to_profile.py
+
+</code></pre>
+        
+
+
+        <br/>
+        <h4>Start profiling with profile/cProfile:</h4>
+        <p>When running in this mode, the command line will start the UI (if needed), start the
+        profiler using cProfile or profile, run the user code and show the profile results in PyVmMonitor when the run is
+        finished.</p>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor --profile=lsprof file_to_profile.py
+
+</code></pre>
+        
+
+        <br/>
+        <h4>Start connected:</h4>
+        <p>In this mode the script will be run with the profiler connected. It will show the live 
+        view and the possibility of starting yappi later on. In this mode, using the API will
+        show the results on the connected PyVmMonitor.</p>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+python install_location/public_api/pyvmmonitor file_to_profile.py
+
+</code></pre>
+        
+    </body>
+</html>
