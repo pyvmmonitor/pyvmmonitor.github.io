@@ -27,33 +27,21 @@ page_dir = os.path.dirname(this_file_dir)
 
 
 HEADER = '''
-<h1 class="header_liclipse">PyVmMonitor</h1>
+<h1 class="header_liclipse">PyVmMonitor (Beta)</h1>
 <!--<p>Profiling Python</p>-->
 <ul class="top1">
-    <!-- <li><a href="http://???">Get It <strong>Download</strong></a></li> -->
     <li><a href="https://groups.google.com/forum/#!forum/pyvmmonitor">Googlegroups <strong>Forum</strong></a></li>
-    <li><a href="http://pyvmmonitor.blogspot.com.br/">View <strong>Blog</strong></a></li>
+    <!--<li><a href="http://pyvmmonitor.blogspot.com.br/">View <strong>Blog</strong></a></li>-->
     <li><a href="https://sw-brainwy.rhcloud.com/tracker/PyVmMonitor/">PyVmMonitor<strong>Tracker</strong></a></li>
 </ul>
 <ul class="top2">
     <li class="lifull"><a href="download.html">Get it<strong>Download</strong></a></li>
 </ul>
 
-<!--
 <ul class="top3">
-    <li class="lifull">
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NJW4VEJQZ36GJ">Help to make better<strong>Buy Single User</strong></a>
-    </li>
+    <li class="lifull"><a href="buy.html">Help to make it better<strong>Buy</strong></a></li>
 </ul>
 
-<ul class="top4">
-    <li class="lifull">
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G5APKLQNXK7DL">For Organizations<strong>Buy Multi User</strong></a>
-    </li>
-</ul>
-
-Pricing: A PyVmMonitor license is US$ ?? TBD<br><br><br>
--->
 <p><small>Copyright 2014-2015 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
 
@@ -163,6 +151,7 @@ def main():
     apply_to(os.path.join(this_file_dir, 'download.html'))
     apply_to(os.path.join(this_file_dir, 'license.html'))
     apply_to(os.path.join(this_file_dir, 'faq.html'))
+    apply_to(os.path.join(this_file_dir, 'buy.html'))
 
 
 if __name__ == '__main__':
