@@ -68,19 +68,19 @@
         <br/>
         <ul>
             <li>
-                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.0/pyvmmonitor_0.5.0_win32.x86_64.exe">PyVmMonitor 0.5.0 for Windows (64 bits)</a>
+                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.5/pyvmmonitor_0.5.5_win32.x86_64.exe">PyVmMonitor 0.5.5 for Windows (64 bits)</a>
             </li>
             <li>
-                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.0/pyvmmonitor_0.5.0_win32.x86.exe">PyVmMonitor 0.5.0 for Windows (32 bits)</a>
+                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.5/pyvmmonitor_0.5.5_win32.x86.exe">PyVmMonitor 0.5.5 for Windows (32 bits)</a>
             </li>
             <li>
-                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.0/PyVmMonitor_0.5.0_macosx.cocoa.x86_64.dmg">PyVmMonitor 0.5.0 for Mac OS (64 bits)</a>
+                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.5/PyVmMonitor_0.5.5_macosx.cocoa.x86_64.dmg">PyVmMonitor 0.5.5 for Mac OS (64 bits)</a>
             </li>
             <li>
-                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.0/pyvmmonitor_0.5.0_linux.x86_64.tar.gz">PyVmMonitor 0.5.0 for Linux (64 bits)</a>
+                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.5/pyvmmonitor_0.5.5_linux.x86_64.tar.gz">PyVmMonitor 0.5.5 for Linux (64 bits)</a>
             </li>
             <li>
-                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.0/pyvmmonitor_0.5.0_linux.x86.tar.gz">PyVmMonitor 0.5.0 Linux (32 bits)</a>
+                <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE/PyVmMonitor%200.5.5/pyvmmonitor_0.5.5_linux.x86.tar.gz">PyVmMonitor 0.5.5 Linux (32 bits)</a>
             </li>
         </ul>
         Older versions may be downloaded from <a href="https://bbc5a801c67991bd078f7f789065e318bdf9d509.googledrive.com/host/0BwwQN8QrgsRpOGpyc2syWkVYVkE">Google Drive</a>
@@ -89,22 +89,23 @@
         <br/>
         <hr/>
         <h3>Requisites</h3>
-        In order to work properly at its best, PyVmMonitor also requires yappi:  <a href="https://code.google.com/p/yappi/">https://code.google.com/p/yappi/</a>.
+        In order to work properly at its best, PyVmMonitor also requires yappi:  <a href="https://code.google.com/p/yappi/">https://code.google.com/p/yappi/</a><br/>
+        <br/>
+        Note: since version 0.5.5, pre-built binaries are distributed along PyVmMonitor in Windows for Python 2.7 32/64 bits and Python 3.4 32 bits (any other configuration still needs to
+        compile or get it pre-built from somewhere else -- such as <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a>).
         <br/>
         <br/>
-        So, after installing PyVmMonitor, you should also install yappi (ideally the development version) and add it to your PYTHONPATH.
+        If you can't get a pre-built binary, you should get its sources and compile it in your machine. The simple steps to do are:
         <br/>
         <br/>
-        hg clone https://bitbucket.org/sumerc/yappi
-        <br/>
-        <br/>
-        python setup.py install
-        <br/>
-        <br/>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+hg clone https://bitbucket.org/sumerc/yappi
+cd yappi
+python setup.py install
+
+</code></pre>
         Note that it'll build a binary extension, so, make sure you have a compiler properly configured for your Python version.
-        <br/>
-        <br/>
-        For Python 2.7, follow: <a href="http://stackoverflow.com/a/11072924/110451">http://stackoverflow.com/a/11072924/110451</a>
         <br/>
         <br/>
         Note that you also need Mercurial (usually just pip install mercurial -- although the compiler is also required for its speedups).
