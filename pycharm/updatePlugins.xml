@@ -1,0 +1,3 @@
+<plugins>
+    <plugin id="com.brainwy.pyvmmonitor" url="http://www.pyvmmonitor.com/pychorm/pyvmmonitor.jar" version="1.0"/>
+</plugins>
