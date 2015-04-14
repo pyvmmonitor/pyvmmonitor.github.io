@@ -24,12 +24,15 @@
             <li>Analyze existing PStats results</li>
             <li>Open DOT files</li>
             <li>Programatic API access</li>
+            <li><a href="profile_on_different_machine.html">Profile on a different machine</a></li>
             <li>Multiple processes support (multiprocessing, django...)</li>
             <li>Live sampling/CPU view</li>
             <ul>
                 <li>Select time range</li>
                 <li>Group samples by method or line</li>
             </ul>
+            <li><a href="pydev_integration.html">PyDev integration</a></li>
+            <li><a href="pycharm_integration.html">PyCharm integration</a></li>
         </ul>
         <img src="images/main.png"/>
         <br/>
@@ -38,94 +41,14 @@
         <!-- <p><a href="history.html">View highlights for previous releases</a></p> -->
         <br/>
         <br/>
-        <h3>Release notes: 0.5.5</h3>
+        <h3>Release notes: 0.6.0</h3>
         
         <ul>
-            <li>A critical issue which prevented PyVmMonitor from starting on Mac OS was fixed.</li>
-            <li>A new tab with overview information on the process is now shown.</li>
-            <li>The memory being occupied by the target process is now (optionally) shown in a plot.</li>
-            <li>Pre-built binaries are now distributed for yappi on Windows (for Python 2.7 32/64 and Python 3.4 32).</li>
-        </ul>
-        
-        <h3>Release notes: 0.5.0</h3>
-        
-        <h4>Multiple Processes</h4>
-        
-        <ul>
-            <li>PyVmMonitor will now attach to monitor subprocesses when a new process is launched.</li>
-            <li>It's possible to select multiple processes or a single process for the live view inspection.</li>
-        </ul>
-        
-        <h3>Release notes: 0.0.8</h3>
-        
-        <h4>Integration</h4>
-        
-        <ul>
-            <li>It's now Integrated with PyDev (profile view).</li>
-            <li>Files may be opened with an external editor (must be configured in options).</li>
-            <li>A command line to use PyVmMonitor is now provided (so, it can be used from the API or from the command line).</li>
-            <ul>
-                <li>View: <a href="command_line.html">command line</a> in the manual for more details.</li>
-            </ul>
-        </ul>
-        
-        
-        <h4>Platforms supported</h4>
-        <ul>
-            <li>PyVmMonitor is now distributed in:</li> 
-            <ul>
-                <li>Windows (64/32 bits)</li>
-                <li>Linux (64/32 bits)</li> 
-                <li>Mac OS (64 bits)</li>
-            </ul>
-        </ul>
-        
-        <h4>UI improvements</h4>
-        <ul>
-            <li>Alt+Back goes to previous location.</li>
-            
-            <li>Geometry is persisted upon restarts of the application.</li>
-            
-            <li>If attached process finishes, it's shown in the UI.</li>
-            
-            <li>PStats view save how it was sorted (cumulative/internal) and scroll location.</li>
-            
-            <li>When we start profiling, the UI should show that properly (i.e.: update ui from backend).</li>
-            
-            <li>When selecting editor in new line, its title is changed.</li>
-            
-            <li>If we deselect/select editor, it no longer reloads the contents if nothing changed.</li>
-            
-            <li>Silencing exception at shutdown when sampling.</li>
-            
-            <li>Find working in internal editor.</li>
-            
-            <li>Show visual indication if internal editor is dirty/saved.</li>
-            
-            <li>It's possible to disconnect from a process.</li>
-            
-            <li>Fixed UnicodeDecodeError if target file has accents.</li>
-            
-            <li>Fixed issue where incompatible Qt library from host machin was being loaded.</li>
-            
-            <li>When opening pstat/dot file a .* option was added.</li>
-            
-            <li>Don't connect to pids we're already connected.</li>
-            
-            <li>The grouped statistics visual state is kept on deselect/select.</li>
-            
-            <li>The existing tabs may be closed (editor, pstats, dot, etc).</li>
-            
-            <li>Graph is drawn with arrows (instead of circle!).</li>
-            
-            <li>About was created.</li>
-            
-            <li>Provide a separate button for saving in pstats format (not only in hidden menu).</li>
-            
-            <li>On live tree view, expand to leaf (first child to the end).</li>
-            
-            <li>Provide a way to have only a single PyVMMonitor active (or at most one at each port it's listening to). </li>
-
+            <li>PyDev integration was improved on Linux/MacOS.</li>
+            <li>PyCharm integration is now available.</li>
+            <li>Fixed issue when PyVmMonitor was used with Python 3.</li>
+            <li>The pyvmmmonitor.profile_method() decorator now has an optional 'condition' argument (see: <a href="public_api.html">PyVmMonitor APi</a> for details).</li>
+            <li>A qt.conf is now distributed so that when running PyVmMonitor it doesn't conflict with a previously installed PySide in the system.</li>
         </ul>
         
     </body>

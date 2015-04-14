@@ -87,6 +87,9 @@ FILE_TO_INFO = pyodict.odict([
     ('command_line.html', Info('Command line parameters for PyVmMonitor')),
     ('public_api.html', Info('API to use PyVmMonitor programatically')),
     ('preferences.html', Info('PyVmMonitor preferences (theme, listening port, editor font, etc.)')),
+    ('profile_on_different_machine.html', Info('Profile on another machine')),
+    ('pydev_integration.html', Info('PyDev integration')),
+    ('pycharm_integration.html', Info('PyCharm integration')),
 ])
 
 
@@ -152,6 +155,7 @@ def main():
     apply_to(os.path.join(this_file_dir, 'license.html'))
     apply_to(os.path.join(this_file_dir, 'faq.html'))
     apply_to(os.path.join(this_file_dir, 'buy.html'))
+    apply_to(os.path.join(this_file_dir, 'contact.html'))
 
 
 if __name__ == '__main__':

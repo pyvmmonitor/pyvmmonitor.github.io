@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+It should be possible to profile Python programs in a different machine. In this example let's consider
+that the client is a windows machine and the server a Linux machine.
+<br/>
+<br/>
+To make the profile in this case you should:
+<br/>
+<br/>
+1. Start pyvmmonitor-ui on your windows machine
+<br/> 
+<br/> 
+2. Copy the contents of C:\bin\PyVmMonitor VERSION\public_api to the Linux machine
+<br/> 
+<br/> 
+3. Add to the start of your code:
+<br/> 
+<br/> 
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+  <code style="color:#000000;word-wrap:normal;">
+# Add the public_api to the PYTHONPATH (could be done by changing environment 
+# variable or adding the contents inside public_api to site-packages too).
+import sys
+sys.path.append(r'/my/path/to/public_api') 
+
+# Note that the port may be different... in the 
+# right-bottom corner of pyvmmonitor it'll show the port it's listening to.
+import pyvmmonitor
+pyvmmonitor.connect(host='my.windows.host.ip', port=5687)
+
+</code></pre>
+<br/>
+
+By doing so it should connect to the pyvmmonitor ui at startup.
+<br/>
+<br/>
+It should start showing the live-tree results at that point 
+and if you have yappi installed on your server you could also start/stop a profile session interactively.
+<br/>
+<br/>
+Another option would be following the steps above for setup and later using the 
+pyvmmonitor.profile_method() decorator to make a deterministic profiling session.
+
+    </body>
+</html>

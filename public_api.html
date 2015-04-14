@@ -34,6 +34,7 @@
 	                <a href="manual.html" style="padding-left:1.5em;">Manual</a>
 	                <a href="history.html" style="padding-left:1.5em;">Releases</a>
 	                <a href="license.html" style="padding-left:1.5em;">License</a>
+	                <a href="contact.html" style="padding-left:1.5em;">Contact</a>
             	</div>
             </div>
         </div>
@@ -43,7 +44,10 @@
 <p><a href="attach_to.html">Attach to running CPython program and use Yappi to do a profile session</a></p>
 <p><a href="command_line.html">Command line parameters for PyVmMonitor</a></p>
 <p><a href="public_api.html">API to use PyVmMonitor programatically</a></p>
-<p><a href="preferences.html">PyVmMonitor preferences (theme, listening port, editor font, etc.)</a></p><br><br><br>
+<p><a href="preferences.html">PyVmMonitor preferences (theme, listening port, editor font, etc.)</a></p>
+<p><a href="profile_on_different_machine.html">Profile on another machine</a></p>
+<p><a href="pydev_integration.html">PyDev integration</a></p>
+<p><a href="pycharm_integration.html">PyCharm integration</a></p><br><br><br>
 <p><small>Copyright 2014-2015 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 
             </header>
@@ -94,8 +98,7 @@ def profile_method(*args, **kwargs):
 
     Or can be customized by receiving kwargs:
 
-    @profile_method(
-        filename='output.pstats', show_text=True, show_in_pyvmmonitor=False)
+    @profile_method(filename='output.pstats', show_text=True, show_in_pyvmmonitor=False)
     def my_call():
         ...
 
@@ -126,6 +129,11 @@ def profile_method(*args, **kwargs):
     :param show_text_rows:
         Only used if show_text is also passed (determines the number of rows to
         print).
+
+    :param condition:
+        A callable which will receive *args and **kwargs to the wrapped function and will determine
+        whether the function should be profiled (if it return True it'll be profiled, if it returns
+        False it won't).
     '''
           </code></pre>
         

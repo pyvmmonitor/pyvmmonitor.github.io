@@ -47,8 +47,7 @@ def profile_method(*args, **kwargs):
 
     Or can be customized by receiving kwargs:
 
-    @profile_method(
-        filename='output.pstats', show_text=True, show_in_pyvmmonitor=False)
+    @profile_method(filename='output.pstats', show_text=True, show_in_pyvmmonitor=False)
     def my_call():
         ...
 
@@ -79,6 +78,11 @@ def profile_method(*args, **kwargs):
     :param show_text_rows:
         Only used if show_text is also passed (determines the number of rows to
         print).
+
+    :param condition:
+        A callable which will receive *args and **kwargs to the wrapped function and will determine
+        whether the function should be profiled (if it return True it'll be profiled, if it returns
+        False it won't).
     '''
           </code></pre>
         

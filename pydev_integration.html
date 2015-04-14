@@ -53,11 +53,30 @@
             </header>
             <section>
                 
-        <p>In the options menu it's possible to customize preferences such as the current theme
-        to use, the port in which PyVmMonitor should listen and the font used for the internal
-        editor:</p>
-        
-        <img src="images/preferences.png"/>
+        The PyVmMonitor integration is bundled in PyDev itself (so, if you have a recent version of
+        PyDev the integration should be available already). PyDev 4.0 onwards is recommended as it had improvements
+        in the PyVmMonitor integration (especially on Linux and Mac OS).
+        <br/>
+        <br/>
+        The integration in PyDev happens through the 'Profile' view, so, to start make that view visible:
+        <br/>
+        <br/>
+        <img src="images/pydev_show_others.png"/>
+        <br/>
+        <br/>
+        <img src="images/pydev_show_view.png"/>
+        <br/>
+        <br/>
+        And from that view you can select to start the profiler for new launches and the profile
+        mode to be used.
+        <br/>        
+        <br/>        
+        Also, check if the PyVmMonitor executable points to the proper location.
+        <br/>
+        <br/>
+        <img src="images/pydev_profile_view.png"/>
+        <br/>
+        <br/>
     
                 <!-- <pre><code>$ cd your_repo_root/repo_name
                     $ git fetch origin
