@@ -42,7 +42,7 @@ HEADER = '''
     <li class="lifull"><a href="buy.html">Help to make it better<strong>Buy</strong></a></li>
 </ul>
 
-<p><small>Copyright 2014-2015 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2016 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
 
 #===================================================================================================
@@ -118,7 +118,7 @@ def create_manual_header():
 
     return '''
 %(li)s<br><br><br>
-<p><small>Copyright 2014-2015 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2016 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 ''' % {'li': '\n'.join(lis)}
 
 if os.path.exists(help_location):
