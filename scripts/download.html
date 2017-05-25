@@ -20,19 +20,19 @@
         <br/>
         <ul>
             <li>
-                <a href="http://www.mediafire.com/download/epfwl2rtjtfevc1/pyvmmonitor_1.0.1_win32.x86_64.exe">PyVmMonitor 1.0.1 for Windows (64 bits)</a>
+                <a href="http://www.mediafire.com/file/1rn8u9d988ug7gu/pyvmmonitor_1.1.0_win32.x86_64.exe">PyVmMonitor 1.1.0 for Windows (64 bits)</a>
             </li>
             <li>
-                <a href="http://www.mediafire.com/download/g6tv6q837z42n78/pyvmmonitor_1.0.1_win32.x86.exe">PyVmMonitor 1.0.1 for Windows (32 bits)</a>
+                <a href="http://www.mediafire.com/file/ieoz5dgnab5yr48/pyvmmonitor_1.1.0_win32.x86.exe">PyVmMonitor 1.1.0 for Windows (32 bits)</a>
             </li>
             <li>
-                <a href="http://www.mediafire.com/download/90md5ppa089n5kh/PyVmMonitor_1.0.1_macosx.cocoa.x86_64.dmg">PyVmMonitor 1.0.1 for Mac OS (64 bits)</a>
+                <a href="http://www.mediafire.com/file/1yryg8b7o7x99r3/PyVmMonitor_1.1.0_macosx.cocoa.x86_64.dmg">PyVmMonitor 1.1.0 for Mac OS (64 bits)</a>
             </li>
             <li>
-                <a href="http://www.mediafire.com/download/bzmazee4bcysbi4/pyvmmonitor_1.0.1_linux.x86_64.tar.gz">PyVmMonitor 1.0.1 for Linux (64 bits)</a>
+                <a href="http://www.mediafire.com/file/cqe1j34xpcd7w4x/pyvmmonitor_1.1.0_linux.x86_64.tar.gz">PyVmMonitor 1.1.0 for Linux (64 bits)</a>
             </li>
             <li>
-                <a href="http://www.mediafire.com/download/038xtn2zu15rrgt/pyvmmonitor_1.0.1_linux.x86.tar.gz">PyVmMonitor 1.0.1 Linux (32 bits)</a>
+                <a href="http://www.mediafire.com/file/j4fp9lgqnwjsau6/pyvmmonitor_1.1.0_linux.x86.tar.gz">PyVmMonitor 1.1.0 Linux (32 bits)</a>
             </li>
         </ul>
         Older versions may be downloaded from <a href="https://drive.google.com/open?id=0BwwQN8QrgsRpOGpyc2syWkVYVkE">Google Drive</a>
@@ -72,15 +72,17 @@ python setup.py install
         
         <br/>
         <br/>
-        <strong>Important for 0.5.0 / 0.6.0</strong>
+        <strong>Important for pre 1.1.0</strong>
         <br/>
         <br/>
-        during the freezing process for versions 0.5.0/0.6.0, the files <strong>libSystem.B.dylib</strong> and <strong>libobjc.A.dylib</strong> were inadvertently added to the distribution
-        and will make starting PyVmMonitor fail depending on your Mac OS version, so, they have to be manually removed to successfully start PyVmMonitor.<br/>
+        during the freezing process for of previous versions, the files <strong>libSystem.B.dylib</strong> and <strong>libobjc.A.dylib</strong>and <strong>libc++.1.dylib</strong> 
+        were inadvertently added to the distribution and will make starting PyVmMonitor fail depending on your Mac OS version, 
+        so, they have to be manually removed to successfully start PyVmMonitor.<br/>
         <br/>
         The files to be removed are located at: <br/>
         /PyVmMonitor.app/Contents/MacOS/libSystem.B.dylib.<br/>
         /PyVmMonitor.app/Contents/MacOS/libobjc.A.dylib.<br/>
+        /PyVmMonitor.app/Contents/MacOS/libc++.1.dylib.<br/>
         <br/>
         <strong>Important:</strong>
         <br/>
