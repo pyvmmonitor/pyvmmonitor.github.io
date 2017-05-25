@@ -14,6 +14,30 @@
     <body>
     <h3>Releases history</h3>
     
+        <h3>Release notes: 1.1.0</h3>
+        <ul>
+            <li>Attach to now works in Python 3.5 and Python 3.6.</li>
+            <li>Fixed issue opening PyVmMonitor on Mac OS X.</li>
+        </ul>
+        
+        <h3>Release notes: 1.0.1</h3>
+        <ul>
+            <li>Pstats files may be passed in the command line to be opened in pyvmmonitor-ui.</li>
+            <li>Fixed issue opening PyVmMonitor in Mac OS (El Capitan).</li>
+            <li>Opening PStats file may fail because it's linked to a Python version, so, in such a situation, PyVmMonitor allows opening it using a different interpreter.</li>
+            <li>Command line examples are properly wrapped with quotes on Windows.</li>
+        </ul>
+        
+        <h3>Release notes: 0.6.0</h3>
+        <ul>
+            <li>PyDev integration was improved on Linux/MacOS.</li>
+            <li>PyCharm integration is now available.</li>
+            <li>Fixed issue when PyVmMonitor was used with Python 3.</li>
+            <li>The pyvmmmonitor.profile_method() decorator now has an optional 'condition' argument (see: <a href="public_api.html">PyVmMonitor API</a> for details).</li>
+            <li>A qt.conf is now distributed so that when running PyVmMonitor it doesn't conflict with a previously installed PySide in the system.</li>
+        </ul>
+
+    
         <h3>Release notes: 0.5.5</h3>
         
         <ul>

@@ -1,11 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-
 body {
+  background-color: #fff;
   padding:50px;
-  /* font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; */
-  font:16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#333;
-  font-weight:300;
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color:#595959;
+  font-weight:400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,27 +21,37 @@ h1, h2, h3 {
 
 h1 {
   font-size:28px;
+  font-weight: 500;
 }
 
 h2 {
   color:#393939;
+  font-weight: 500;
 }
 
 h3, h4, h5, h6 {
   color:#494949;
+  font-weight: 500;
 }
 
 a {
   color:#39c;
-  font-weight:400;
   text-decoration:none;
+}
+
+a:hover {
+  color:#069;
 }
 
 a small {
   font-size:11px;
-  color:#333;
+  color:#777;
   margin-top:-0.6em;
   display:block;
+}
+
+a:hover small {
+  color:#777;
 }
 
 .wrapper {
@@ -59,7 +67,7 @@ blockquote {
 }
 
 code, pre {
-  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
   font-size:12px;
 }
@@ -100,7 +108,9 @@ header {
   width:270px;
   float:left;
   position:fixed;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
+
 
 header ul {
   list-style:none;
@@ -188,7 +198,9 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
+
 
 .top_header {
     width: 860px; margin: 0 auto;
