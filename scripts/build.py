@@ -5,6 +5,55 @@ import os
 import shutil
 import pyodict
 
+DOWNLOAD_REPLACEMENTS = {
+    'pyvmmonitor_version': '1.1.2',
+    'all_versions_url': 'https://www.mediafire.com/folder/mz3sakuqdul90/PyVmMonitor',
+}
+
+DOWNLOADS = '''
+http://www.mediafire.com/file/9smdc57z9yshc3a/pyvmmonitor_1.1.2_linux.x86.tar.gz
+http://www.mediafire.com/file/qdz3f2vs31a42z6/pyvmmonitor_1.1.2_linux.x86_64.tar.gz
+http://www.mediafire.com/file/wbh7128pqhkb54k/PyVmMonitor_1.1.2_macosx.cocoa.x86_64.dmg
+http://www.mediafire.com/file/aom0du1lbyp2cuk/pyvmmonitor_1.1.2_win32.x86.exe
+http://www.mediafire.com/file/ejti3n4zg925187/pyvmmonitor_1.1.2_win32.x86_64.exe
+https://www.mediafire.com/folder/i3idld3jxp3fu/PyVmMonitor_1.1.2
+'''
+
+for line in DOWNLOADS.splitlines():
+    line = line.strip()
+    if not line:
+        continue
+    if line.endswith('SHA256_AND_INSTALL_INSTRUCTIONS.txt'):
+        DOWNLOAD_REPLACEMENTS['sha256_and_install_instructions_url'] = line
+
+    elif line.endswith('LICENSE.TXT'):
+        DOWNLOAD_REPLACEMENTS['license_url'] = line
+
+    elif line.endswith('win32.x86_64.exe'):
+        DOWNLOAD_REPLACEMENTS['win64_url'] = line
+
+    elif line.endswith('win32.x86.exe'):
+        DOWNLOAD_REPLACEMENTS['win32_url'] = line
+
+    elif line.endswith('macosx.cocoa.x86_64.dmg'):
+        DOWNLOAD_REPLACEMENTS['macos_url'] = line
+
+    elif line.endswith('.zip') and ('UPDATE_SITE' in line) or ('UPDATE%20SITE' in line):
+        DOWNLOAD_REPLACEMENTS['update_site_url'] = line
+
+    elif line.endswith('linux.x86_64.tar.gz'):
+        DOWNLOAD_REPLACEMENTS['linux64_url'] = line
+
+    elif line.endswith('linux.x86.tar.gz'):
+        DOWNLOAD_REPLACEMENTS['linux32_url'] = line
+
+    elif 'PyVmMonitor_' in line:
+        DOWNLOAD_REPLACEMENTS['folder_url'] = line
+
+    else:
+        raise AssertionError('Unexpected line: %s' % (line,))
+
+
 #===================================================================================================
 # copytree
 #===================================================================================================
@@ -25,7 +74,6 @@ template_contents = open(os.path.join(os.path.dirname(__file__), 'template.html'
 this_file_dir = os.path.dirname(__file__)
 page_dir = os.path.dirname(this_file_dir)
 
-
 HEADER = '''
 <h1 class="header_liclipse">PyVmMonitor (Beta)</h1>
 <!--<p>Profiling Python</p>-->
@@ -45,22 +93,37 @@ HEADER = '''
 <p><small>Copyright 2014-2017 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
 
+
 #===================================================================================================
 # apply_to
 #===================================================================================================
-def apply_to(filename, header=None):
+def apply_to(filename, header=None, additional=None):
+    if additional is None:
+        additional = {}
     with open(filename, 'r') as stream:
         contents = stream.read()
         body = extract(contents, 'body')
-        apply_to_contents(contents, os.path.basename(filename), body, header or HEADER)
+        apply_to_contents(contents, os.path.basename(filename), body, header or HEADER, additional)
 
+
+def template_replace(contents, kwargs):
+    to_replace = set()
+    to_replace.update(kwargs.keys())
+
+    for r in to_replace:
+        c = kwargs.get(r, '')
+        contents = contents.replace('%(' + r + ')s', c)
+    return contents
 
 #===================================================================================================
 # apply_to_contents
 #===================================================================================================
-def apply_to_contents(contents, basename, body, header):
-
+def apply_to_contents(contents, basename, body, header, additional=None):
+    if additional is None:
+        additional = {}
+    additional = additional.copy()
     contents = template_contents % {'body': body, 'header': header}
+    contents = template_replace(contents, additional)
 
     with open(os.path.join(page_dir, basename), 'w') as out_stream:
         out_stream.write(contents)
@@ -75,8 +138,8 @@ def extract(contents, tag):
     return contents[i + len(tag) + 2:j]
 
 
-
 class Info:
+
     def __init__(self, title):
         self.title = title
         self.filename = None
@@ -92,7 +155,6 @@ FILE_TO_INFO = pyodict.odict([
     ('pycharm_integration.html', Info('PyCharm integration')),
 ])
 
-
 help_location = os.path.join(os.path.dirname(__file__), 'manual')
 
 if os.path.exists(help_location):
@@ -104,6 +166,7 @@ if os.path.exists(help_location):
         FILE_TO_INFO[f].filename = os.path.join(help_location, f)
 else:
     print('Dir: %s does not exist (unable to generate related pages)' % help_location)
+
 
 #===================================================================================================
 # create_manual_header
@@ -121,6 +184,7 @@ def create_manual_header():
 <p><small>Copyright 2014-2017 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 ''' % {'li': '\n'.join(lis)}
 
+
 if os.path.exists(help_location):
     MANUAL_HEADER = create_manual_header()
 
@@ -130,13 +194,11 @@ if os.path.exists(help_location):
 #===================================================================================================
 def create_manual_page():
 
-
     manual_body = '''
 <h3>Choose the topic you're interested in...</h3>
 <img src="images/arrow_left.png" />
 '''
     apply_to_contents(manual_body, 'manual.html', manual_body, MANUAL_HEADER)
-
 
 
 #===================================================================================================
@@ -148,10 +210,10 @@ def main():
         create_manual_page()
         for info in FILE_TO_INFO.itervalues():
             apply_to(info.filename, header=MANUAL_HEADER)
-            
+
     apply_to(os.path.join(this_file_dir, 'index.html'))
     apply_to(os.path.join(this_file_dir, 'history.html'))
-    apply_to(os.path.join(this_file_dir, 'download.html'))
+    apply_to(os.path.join(this_file_dir, 'download.html'), additional=DOWNLOAD_REPLACEMENTS)
     apply_to(os.path.join(this_file_dir, 'license.html'))
     apply_to(os.path.join(this_file_dir, 'faq.html'))
     apply_to(os.path.join(this_file_dir, 'buy.html'))
