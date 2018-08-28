@@ -108,7 +108,7 @@ def apply_to(filename, header=None, additional=None):
 
 def template_replace(contents, kwargs):
     to_replace = set()
-    to_replace.update(kwargs.keys())
+    to_replace.update(list(kwargs.keys()))
 
     for r in to_replace:
         c = kwargs.get(r, '')
@@ -165,7 +165,7 @@ if os.path.exists(help_location):
             raise ValueError('Not expecting: %s' % (f,))
         FILE_TO_INFO[f].filename = os.path.join(help_location, f)
 else:
-    print('Dir: %s does not exist (unable to generate related pages)' % help_location)
+    print(('Dir: %s does not exist (unable to generate related pages)' % help_location))
 
 
 #===================================================================================================
@@ -173,7 +173,7 @@ else:
 #===================================================================================================
 def create_manual_header():
     lis = []
-    for file_basename, file_info in FILE_TO_INFO.iteritems():
+    for file_basename, file_info in FILE_TO_INFO.items():
         lis.append('<p><a href="%s">%s</a></p>' % (
             os.path.basename(file_info.filename),
             file_info.title
@@ -208,7 +208,7 @@ def main():
     # Manual
     if os.path.exists(help_location):
         create_manual_page()
-        for info in FILE_TO_INFO.itervalues():
+        for info in FILE_TO_INFO.values():
             apply_to(info.filename, header=MANUAL_HEADER)
 
     apply_to(os.path.join(this_file_dir, 'index.html'))
@@ -222,4 +222,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    print 'Generation finished'
+    print('Generation finished')
