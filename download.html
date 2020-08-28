@@ -41,7 +41,7 @@
         <div class="wrapper">
             <header>
                 
-<h1 class="header_liclipse">PyVmMonitor (Beta)</h1>
+<h1 class="header_liclipse">PyVmMonitor</h1>
 <!--<p>Profiling Python</p>-->
 <ul class="top1">
     <li><a href="https://groups.google.com/forum/#!forum/pyvmmonitor">Googlegroups <strong>Forum</strong></a></li>
@@ -56,43 +56,32 @@
     <li class="lifull"><a href="buy.html">Help to make it better<strong>Buy</strong></a></li>
 </ul>
 
-<p><small>Copyright 2014-2017 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2020 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 
             </header>
             <section>
                 
-        PyVmMonitor is currently in public beta.
-        <br/>
-        <br/>
-
         The latest versions may be downloaded through the links below:<br/>
         <br/>
         <ul>
             <li>
-                <a href="http://www.mediafire.com/file/ejti3n4zg925187/pyvmmonitor_1.1.2_win32.x86_64.exe">PyVmMonitor 1.1.2 for Windows (64 bits)</a>
+                <a href="http://www.mediafire.com/file/xif3trw0vmvfenv/pyvmmonitor_2.0.0_win32.x86_64.exe">PyVmMonitor 2.0.0 for Windows (64 bits)</a>
             </li>
             <li>
-                <a href="http://www.mediafire.com/file/aom0du1lbyp2cuk/pyvmmonitor_1.1.2_win32.x86.exe">PyVmMonitor 1.1.2 for Windows (32 bits)</a>
-            </li>
-            <li>
-                <a href="http://www.mediafire.com/file/wbh7128pqhkb54k/PyVmMonitor_1.1.2_macosx.cocoa.x86_64.dmg">PyVmMonitor 1.1.2 for Mac OS (64 bits)</a>
-            </li>
-            <li>
-                <a href="http://www.mediafire.com/file/qdz3f2vs31a42z6/pyvmmonitor_1.1.2_linux.x86_64.tar.gz">PyVmMonitor 1.1.2 for Linux (64 bits)</a>
-            </li>
-            <li>
-                <a href="http://www.mediafire.com/file/9smdc57z9yshc3a/pyvmmonitor_1.1.2_linux.x86.tar.gz">PyVmMonitor 1.1.2 for Linux (32 bits)</a>
+                <a href="http://www.mediafire.com/file/nbkgxh15z5fgdj3/pyvmmonitor_2.0.0_linux.x86_64.tar.gz">PyVmMonitor 2.0.0 for Linux (64 bits)</a>
             </li>
         </ul>
         Older versions may be downloaded from <a href="https://www.mediafire.com/folder/mz3sakuqdul90/PyVmMonitor">MediaFire</a>
         (install instructions below for each platform).
         <br/>
         <br/>
+        <strong>Note:</strong> Mac OS support is not currently available for PyVmMonitor 2.0.
+        <br/>
         <hr/>
         <h3>Requisites</h3>
-        In order to work properly at its best, PyVmMonitor also requires yappi:  <a href="https://bitbucket.org/sumerc/yappi/">https://bitbucket.org/sumerc/yappi/</a><br/>
+        In order to work properly at its best, PyVmMonitor also requires yappi:  <a href="https://github.com/sumerc/yappi/">https://github.com/sumerc/yappi/</a><br/>
         <br/>
-        Note: since version 1.0.1, pre-built binaries are distributed along PyVmMonitor in Windows for Python 2.7 32/64 bits and Python 3.4 32 bits (any other configuration still needs to
+        Note: since version 1.0.1, pre-built binaries are distributed along PyVmMonitor in Windows for some Python versions (other configurations still needs to
         compile or get it pre-built from somewhere else -- such as <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a>).
         <br/>
         <br/>
@@ -101,66 +90,13 @@
         <br/>
         <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
           <code style="color:#000000;word-wrap:normal;">
-hg clone https://bitbucket.org/sumerc/yappi
-cd yappi
-python setup.py install
-
+pip install yappi
 </code></pre>
         Note that it'll build a binary extension, so, make sure you have a compiler properly configured for your Python version.
         <br/>
         <br/>
-        Note that you also need Mercurial (usually just pip install mercurial -- although the compiler is also required for its speedups).
-        <br/>
-        <br/>
         <hr/>
         <strong>Instaling on Windows</strong>: after downloading PyVmMonitor, double-click the installer and follow the steps!
-        <br/>
-        <br/>
-        <hr/>
-        <strong>Instaling on Mac OS</strong>: Download the .dmg file, mount it as a disk and copy it (drag it) to the Applications dir.
-        
-        <br/>
-        <br/>
-        <strong>Important for pre 1.1.0</strong>
-        <br/>
-        <br/>
-        during the freezing process for of previous versions, the files <strong>libSystem.B.dylib</strong>, <strong>libobjc.A.dylib</strong> and <strong>libc++.1.dylib</strong> 
-        were inadvertently added to the distribution and will make starting PyVmMonitor fail depending on your Mac OS version, 
-        so, they have to be manually removed to successfully start PyVmMonitor.<br/>
-        <br/>
-        The files to be removed are located at: <br/>
-        /PyVmMonitor.app/Contents/MacOS/libSystem.B.dylib.<br/>
-        /PyVmMonitor.app/Contents/MacOS/libobjc.A.dylib.<br/>
-        /PyVmMonitor.app/Contents/MacOS/libc++.1.dylib.<br/>
-        <br/>
-        <strong>Important:</strong>
-        <br/>
-        <br/>
-
-        On latest Mac OS X versions, after extracting the DMG, when executing PyVmMonitor.app, you may get an error such as:
-        <br/>
-        <br/>
-
-        "PyVmMonitor.app" is damaged and can't be opened. You should move it to the Trash.
-        <br/>
-        <br/>
-
-        This happens because PyVmMonitor isn't currently signed nor distributed through the Mac App Store.
-        <br/>
-        <br/>
-
-        To overcome this, right-click the file, choose 'open' and confirm -- instead of double-clicking it (note that
-        this must be done only once, subsequent attempts to open with double-click should work properly).
-        <br/>
-        <br/>
-
-        Alternatively, it's possible to go to <strong>System Preferences > Security & Privacy</strong> and change "<strong>Allow Applications Downloaded
-        From</strong>" to "<strong>Anywhere</strong>". You have to click the lock on the bottom to make changes. Once you start up PyVmMonitor.app, you can
-        change it back to "Mac App Store and identified developers".
-        <br/>
-        <br/>
-
-        See: <a href="http://support.apple.com/kb/ht3662">http://support.apple.com/kb/ht3662</a> for details.
         <br/>
         <br/>
         <hr/>
@@ -180,6 +116,16 @@ python setup.py install
         (or alternatively, just execute pyvmmonitor/pyvmmonitor-ui) 
         <br/>
         <br/>
+        <strong>Note:</strong> it's possible that it complains about <strong>libblas.so.3</strong> not being there, in this case, please install the needed deps:
+        <br/>
+        <br/>
+        <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee; font-size: 12px; border: 1px dashed #999999; line-height: 14px; padding: 5px; overflow: auto; width: 100%">
+          <code style="color:#000000;word-wrap:normal;">
+sudo apt-get install libatlas-base-dev
+</code></pre>
+        <strong>Note:</strong> attach to process may not work if ptrace is not configured properly.
+        <br/>
+        See: <a href="https://stackoverflow.com/questions/19215177/how-to-solve-ptrace-operation-not-permitted-when-trying-to-attach-gdb-to-a-pro">https://stackoverflow.com/questions/19215177/how-to-solve-ptrace-operation-not-permitted-when-trying-to-attach-gdb-to-a-pro</a>
         
         
     

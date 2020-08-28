@@ -6,27 +6,21 @@ import shutil
 import pyodict
 
 DOWNLOAD_REPLACEMENTS = {
-    'pyvmmonitor_version': '1.1.2',
+    'pyvmmonitor_version': '2.0.0',
     'all_versions_url': 'https://www.mediafire.com/folder/mz3sakuqdul90/PyVmMonitor',
 }
 
 DOWNLOADS = '''
-http://www.mediafire.com/file/9smdc57z9yshc3a/pyvmmonitor_1.1.2_linux.x86.tar.gz
-http://www.mediafire.com/file/qdz3f2vs31a42z6/pyvmmonitor_1.1.2_linux.x86_64.tar.gz
-http://www.mediafire.com/file/wbh7128pqhkb54k/PyVmMonitor_1.1.2_macosx.cocoa.x86_64.dmg
-http://www.mediafire.com/file/aom0du1lbyp2cuk/pyvmmonitor_1.1.2_win32.x86.exe
-http://www.mediafire.com/file/ejti3n4zg925187/pyvmmonitor_1.1.2_win32.x86_64.exe
-https://www.mediafire.com/folder/i3idld3jxp3fu/PyVmMonitor_1.1.2
+http://www.mediafire.com/file/xif3trw0vmvfenv/pyvmmonitor_2.0.0_win32.x86_64.exe
+http://www.mediafire.com/file/nbkgxh15z5fgdj3/pyvmmonitor_2.0.0_linux.x86_64.tar.gz
+http://www.mediafire.com/folder/j0ofoqqhghbfm/PyVmMonitor_2.0.0
 '''
 
 for line in DOWNLOADS.splitlines():
     line = line.strip()
     if not line:
         continue
-    if line.endswith('SHA256_AND_INSTALL_INSTRUCTIONS.txt'):
-        DOWNLOAD_REPLACEMENTS['sha256_and_install_instructions_url'] = line
-
-    elif line.endswith('LICENSE.TXT'):
+    if line.endswith('LICENSE.TXT'):
         DOWNLOAD_REPLACEMENTS['license_url'] = line
 
     elif line.endswith('win32.x86_64.exe'):
@@ -75,7 +69,7 @@ this_file_dir = os.path.dirname(__file__)
 page_dir = os.path.dirname(this_file_dir)
 
 HEADER = '''
-<h1 class="header_liclipse">PyVmMonitor (Beta)</h1>
+<h1 class="header_liclipse">PyVmMonitor</h1>
 <!--<p>Profiling Python</p>-->
 <ul class="top1">
     <li><a href="https://groups.google.com/forum/#!forum/pyvmmonitor">Googlegroups <strong>Forum</strong></a></li>
@@ -90,7 +84,7 @@ HEADER = '''
     <li class="lifull"><a href="buy.html">Help to make it better<strong>Buy</strong></a></li>
 </ul>
 
-<p><small>Copyright 2014-2017 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2020 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
 
 
@@ -181,7 +175,7 @@ def create_manual_header():
 
     return '''
 %(li)s<br><br><br>
-<p><small>Copyright 2014-2017 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2020 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 ''' % {'li': '\n'.join(lis)}
 
 
