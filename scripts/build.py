@@ -6,14 +6,14 @@ import shutil
 import pyodict
 
 DOWNLOAD_REPLACEMENTS = {
-    'pyvmmonitor_version': '2.0.0',
+    'pyvmmonitor_version': '2.0.1',
     'all_versions_url': 'https://www.mediafire.com/folder/mz3sakuqdul90/PyVmMonitor',
 }
 
 DOWNLOADS = '''
-http://www.mediafire.com/file/xif3trw0vmvfenv/pyvmmonitor_2.0.0_win32.x86_64.exe
-http://www.mediafire.com/file/nbkgxh15z5fgdj3/pyvmmonitor_2.0.0_linux.x86_64.tar.gz
-http://www.mediafire.com/folder/j0ofoqqhghbfm/PyVmMonitor_2.0.0
+https://www.mediafire.com/file/47f58gtybhdmle4/pyvmmonitor_2.0.1_win32.x86_64.exe
+https://www.mediafire.com/file/q03boa9ftngy16p/pyvmmonitor_2.0.1_linux.x86_64.tar.gz
+https://www.mediafire.com/folder/k8c8ka3fwzpgi/PyVmMonitor_2.0.1
 '''
 
 for line in DOWNLOADS.splitlines():
@@ -84,7 +84,7 @@ HEADER = '''
     <li class="lifull"><a href="buy.html">Help to make it better<strong>Buy</strong></a></li>
 </ul>
 
-<p><small>Copyright 2014-2020 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2021 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 '''
 
 
@@ -175,7 +175,7 @@ def create_manual_header():
 
     return '''
 %(li)s<br><br><br>
-<p><small>Copyright 2014-2020 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p><small>Copyright 2014-2021 - Brainwy Software Ltda.<br/>Hosted on GitHub Pages - Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 ''' % {'li': '\n'.join(lis)}
 
 
