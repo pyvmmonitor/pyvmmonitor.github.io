@@ -6,14 +6,14 @@ import shutil
 import pyodict
 
 DOWNLOAD_REPLACEMENTS = {
-    'pyvmmonitor_version': '2.0.2',
+    'pyvmmonitor_version': '3.0.0',
     'all_versions_url': 'https://www.mediafire.com/folder/mz3sakuqdul90/PyVmMonitor',
 }
 
 DOWNLOADS = '''
-https://www.mediafire.com/file/otoa9ygavd0pn08/pyvmmonitor_2.0.2_linux.x86_64.tar.gz
-https://www.mediafire.com/file/gpi90msistt7s8g/pyvmmonitor_2.0.2_win32.x86_64.exe
-https://www.mediafire.com/folder/8a6isq8ro7bkw/PyVmMonitor_2.0.2
+https://www.mediafire.com/file_premium/lznghjg21mug2lk/pyvmmonitor_3.0.0_linux.x86_64.tar.gz
+https://www.mediafire.com/file_premium/69g2wu9s35q7zvh/pyvmmonitor_3.0.0_win32.x86_64.exe
+https://www.mediafire.com/folder/jp4mcv8hchutn/PyVmMonitor_3.0.0
 '''
 
 for line in DOWNLOADS.splitlines():
